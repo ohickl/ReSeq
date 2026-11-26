@@ -435,7 +435,7 @@ CoverageStats::CoverageBlock *CoverageStats::CreateBlock(uintRefSeqId seq_id, ui
 
 	new_block->reads_.reserve( (*last_block_).reads_.capacity() );
 	new_block->coverage_.resize( kBlockSize );
-	new_block->first_variant_id_ = (*last_block_).first_variant_id_;
+	new_block->first_variant_id_ = (seq_id == (*last_block_).sequence_id_ ? (*last_block_).first_variant_id_ : 0);
 	(*last_block_).next_block_ = new_block;
 
 	return new_block;

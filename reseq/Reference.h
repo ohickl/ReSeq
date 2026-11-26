@@ -368,7 +368,7 @@ namespace reseq{
 		inline bool VariantsLoaded() const{ return variants_.size(); }
 		inline bool VariantPositionsLoaded() const{ return variant_positions_.size(); }
 		inline bool VariantsLoadedForSequence(uintRefSeqId ref_seq_id) const{ return read_variation_for_num_sequences_ > ref_seq_id; }
-		inline bool VariantPositionsLoadedForSequence(uintRefSeqId ref_seq_id) const{ return read_variation_for_num_sequences_ >= ref_seq_id; }
+		inline bool VariantPositionsLoadedForSequence(uintRefSeqId ref_seq_id) const{ return read_variation_for_num_sequences_ > ref_seq_id; }
 		inline bool VariantsCompletelyLoaded() const{ return read_variation_for_num_sequences_ >= variants_.size(); }
 		inline bool VariantPositionsCompletelyLoaded() const{ return read_variation_for_num_sequences_ >= variant_positions_.size(); }
 		inline const std::vector<Reference::Variant> &Variants(uintRefSeqId ref_seq_id) const{ return variants_.at(ref_seq_id); }
